@@ -5,8 +5,83 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Thread13._06"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="T9" Height="620" Width="300">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="250"/>
+        </Grid.RowDefinitions>
+
+        <TextBox Width="220" HorizontalAlignment="Center"
+                 Height="195" IsReadOnly="True"/>
+
+        <Grid Grid.Row="1">
+            <Button Height="45" Width="50" 
+                    Margin="110,0,112,105"
+                    Content="^" FontSize="35"/>
+            <Button Height="45" Width="50"                    
+                    Margin="65,45,167,60"
+                    Content="" FontSize="35"/>
+            <Button Height="45" Width="50" 
+                    Margin="165,45,67,60"
+                    Content="" FontSize="35"/>
+            <Button Height="45" Width="50" 
+                    Margin="115,90,117,15"
+                    Content="" FontSize="35"/>
+
+            <Button Height="25" Width="80" Margin="10,115,192,10"
+                    Content="C" FontSize="15"/>
+            <Button Height="25" Width="80" Margin="192,115,10,10"
+                    Content="Add" FontSize="15"/>
+
+        </Grid>
+
+        <StackPanel Grid.Row="2" Height="230">
+            <WrapPanel Height="55">
+                <Button Margin="10 5 0 0" Width="80" Height="50"
+                        Content="1" FontSize="25"/>
+                <Button Margin="5 5 0 0" Width="80" Height="50"
+                        Content="2 ABC" FontSize="20"/>
+                <Button Margin="5 5 5 0" Width="80" Height="50"
+                        Content="3 DEF" FontSize="20"/>
+            </WrapPanel>
+
+            <WrapPanel Height="55">
+                <Button Margin="10 5 0 0" Width="80" Height="50" 
+                        Content="4 ABC" FontSize="20"/>
+                <Button Margin="5 5 0 0" Width="80" Height="50"
+                        Content="5 JKL" FontSize="20"/>
+                <Button Margin="5 5 5 0" Width="80" Height="50"
+                        Content="6 MNO" FontSize="20"/>
+            </WrapPanel>
+
+            <WrapPanel Height="55">
+                <Button Margin="10 5 0 0" Width="80" Height="50"
+                        FontSize="20">
+                    7 PQRS
+                </Button>
+                <Button Margin="5 5 0 0" Width="80" Height="50"
+                         FontSize="20">
+                    8 TUV
+                </Button>
+                <Button Margin="5 5 5 0" Width="80" Height="50"
+                         FontSize="20">
+                    9
+                    WXYZ
+                </Button>
+            </WrapPanel>
+
+            <WrapPanel Height="55">
+                <Button Margin="10 5 0 0" Width="80" Height="50" 
+                        Content="*" FontSize="40"/>
+                <Button Margin="5 5 0 0" Width="80" Height="50"
+                        Content="0 +" FontSize="25"/>
+                <Button Margin="5 5 5 0" Width="80" Height="50"
+                         Content="#" FontSize="35"/>
+            </WrapPanel>
+        </StackPanel>
+
+
     </Grid>
 </Window>
