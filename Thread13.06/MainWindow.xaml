@@ -5,21 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Thread13._06"
         mc:Ignorable="d"
-        Title="T9" Height="620" Width="300">
+        Title="T9" Height="620" Width="300" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="200"/>
-            <RowDefinition Height="150"/>
-            <RowDefinition Height="250"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
+    
+        <TextBox Name="mainSpace" Width="220" HorizontalAlignment="Center"
+                 Height="195" FontSize="25" 
+                 Text="{Binding CurrentText, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <TextBox Width="220" HorizontalAlignment="Center"
-                 Height="195" IsReadOnly="True"/>
-
-        <Grid Grid.Row="1">
+        <!--<Grid Grid.Row="1">
             <Button Height="45" Width="50" 
                     Margin="110,0,112,105"
-                    Content="^" FontSize="35"/>
+                    Content="^" FontSize="27"/>
             <Button Height="45" Width="50"                    
                     Margin="65,45,167,60"
                     Content="" FontSize="35"/>
@@ -39,49 +39,103 @@
 
         <StackPanel Grid.Row="2" Height="230">
             <WrapPanel Height="55">
-                <Button Margin="10 5 0 0" Width="80" Height="50"
-                        Content="1" FontSize="25"/>
-                <Button Margin="5 5 0 0" Width="80" Height="50"
-                        Content="2 ABC" FontSize="20"/>
-                <Button Margin="5 5 5 0" Width="80" Height="50"
-                        Content="3 DEF" FontSize="20"/>
+                <Button Margin="18 5 0 0" Width="80" Height="50"
+                         Content="1" FontSize="25">
+                </Button>
+                <Button Margin="5 5 0 0" Width="80" Height="50" FontSize="20">
+                    <Button.Content>
+                        <StackPanel>
+                            <TextBlock Text="2" FontSize="20" TextAlignment="Center"/>
+                            <TextBlock Text="ABC" FontSize="15"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+                <Button Margin="5 5 5 0" Width="80" Height="50" FontSize="20">
+                    <Button.Content>
+                        <StackPanel>
+                            <TextBlock Text="3" FontSize="20" TextAlignment="Center"/>
+                            <TextBlock Text="DEF" FontSize="15"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
             </WrapPanel>
 
             <WrapPanel Height="55">
-                <Button Margin="10 5 0 0" Width="80" Height="50" 
-                        Content="4 ABC" FontSize="20"/>
-                <Button Margin="5 5 0 0" Width="80" Height="50"
-                        Content="5 JKL" FontSize="20"/>
-                <Button Margin="5 5 5 0" Width="80" Height="50"
-                        Content="6 MNO" FontSize="20"/>
+                <Button Margin="18 5 0 0" Width="80" Height="50" FontSize="20">
+                    <Button.Content>
+                        <StackPanel>
+                            <TextBlock Text="4" FontSize="20" TextAlignment="Center"/>
+                            <TextBlock Text="GHI" FontSize="15"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+                <Button Margin="5 5 0 0" Width="80" Height="50" FontSize="20">
+                    <Button.Content>
+                        <StackPanel>
+                            <TextBlock Text="5" FontSize="20" TextAlignment="Center"/>
+                            <TextBlock Text="JKL" FontSize="15"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+                <Button Margin="5 5 5 0" Width="80" Height="50" FontSize="20">
+                    <Button.Content>
+                        <StackPanel>
+                            <TextBlock Text="6" FontSize="20" TextAlignment="Center"/>
+                            <TextBlock Text="MNO" FontSize="15"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
             </WrapPanel>
 
             <WrapPanel Height="55">
-                <Button Margin="10 5 0 0" Width="80" Height="50"
+                <Button Margin="18 5 0 0" Width="80" Height="50"
                         FontSize="20">
-                    7 PQRS
+                    <Button.Content>
+                        <StackPanel>
+                            <TextBlock Text="7" FontSize="20" TextAlignment="Center"/>
+                            <TextBlock Text="PQRS" FontSize="15"/>
+                        </StackPanel>
+                    </Button.Content>
                 </Button>
                 <Button Margin="5 5 0 0" Width="80" Height="50"
                          FontSize="20">
-                    8 TUV
+                    <Button.Content>
+                        <StackPanel>
+                            <TextBlock Text="8" FontSize="20" TextAlignment="Center"/>
+                            <TextBlock Text="TUV" FontSize="15"/>
+                        </StackPanel>
+                    </Button.Content>
                 </Button>
                 <Button Margin="5 5 5 0" Width="80" Height="50"
                          FontSize="20">
-                    9
-                    WXYZ
+                    <Button.Content>
+                        <StackPanel>
+                            <TextBlock Text="9" FontSize="20" TextAlignment="Center"/>
+                            <TextBlock Text="WXYZ" FontSize="15"/>
+                        </StackPanel>
+                    </Button.Content>
                 </Button>
             </WrapPanel>
 
             <WrapPanel Height="55">
-                <Button Margin="10 5 0 0" Width="80" Height="50" 
+                <Button Margin="18 5 0 0" Width="80" Height="50" 
                         Content="*" FontSize="40"/>
                 <Button Margin="5 5 0 0" Width="80" Height="50"
-                        Content="0 +" FontSize="25"/>
+                         FontSize="25">
+                    <Button.Content>
+                        <StackPanel>
+                            <TextBlock Text="0" FontSize="15" TextAlignment="Center"/>
+                            <TextBlock Text="+" FontSize="15"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
                 <Button Margin="5 5 5 0" Width="80" Height="50"
                          Content="#" FontSize="35"/>
             </WrapPanel>
-        </StackPanel>
+        </StackPanel>-->
 
+        <ListBox Grid.Row="1" Name="listbox" Width="250" Height="250"
+               ItemsSource="{Binding CurrentBuffer}"  />
 
     </Grid>
 </Window>
