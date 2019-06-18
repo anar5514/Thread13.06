@@ -29,8 +29,6 @@ namespace Thread13._06.ViewModels
             }
         }
 
-
-
         private string currentText;
         public string CurrentText
         {
@@ -41,21 +39,20 @@ namespace Thread13._06.ViewModels
             set
             {
                 currentText = value;
-                word = currentText;
                 if (value == string.Empty)
                     CurrentBuffer = new List<string>();
                 else
                 {
-                    ThreadPool.QueueUserWorkItem(new WaitCallback(Search));                   
+                    ThreadPool.QueueUserWorkItem(new WaitCallback(Search));                     
                 }
                 OnPropertyChanged(new PropertyChangedEventArgs(nameof(CurrentText)));
             }
         }
-        public string word { get; set; }
-        public void Search(object a)
+
+        public void Search(object letter)
         {
             CurrentBuffer = new List<string>();
-            CurrentBuffer = Dictionary.Where(x => x.Contains(CurrentBuffer)).ToList();
+            CurrentBuffer = Dictionary.Where(x => x.Contains(CurrentText)).ToList();
         }
     }
 }

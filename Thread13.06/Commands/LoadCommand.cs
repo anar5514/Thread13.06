@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using Thread13._06.ViewModels;
 
@@ -29,13 +30,20 @@ namespace Thread13._06.Commands
         {
             MainWindowViewModel.Dictionary = new List<string>();
 
-            var arr = File.ReadAllText("dictionary.txt").Split('\n');
-
-            for (int i = 0; i < arr.Count(); i++)
+            if (File.Exists("dictionary.txt"))
             {
-                MainWindowViewModel.Dictionary.Add(arr[i]);
+                var arr = File.ReadAllText("dictionary.txt").Split('\n');
+
+                for (int i = 0; i < arr.Count(); i++)
+                {
+                    MainWindowViewModel.Dictionary.Add(arr[i]);
+                }
             }
+            else
+                MessageBox.Show("File not exist ");
+
             
+
         }
     }
 }
